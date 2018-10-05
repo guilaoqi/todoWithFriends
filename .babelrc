@@ -1,0 +1,19 @@
+{
+ "presets": [
+  ["env", {
+   "modules": false
+  }],
+  "stage-2"
+ ],
+ // 下面指的是在生成的文件中，不产生注释
+ "comments": false,
+ "plugins": ["transform-runtime"],
+ "env": {
+  // test 是提前设置的环境变量，如果没有设置BABEL_ENV则使用NODE_ENV，如果都没有设置默认就是development
+  "test": {
+   "presets": ["env", "stage-2"],
+   // instanbul是一个用来测试转码后代码的工具
+   "plugins": ["istanbul"]
+  }
+ }
+}
